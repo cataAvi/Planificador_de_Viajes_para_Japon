@@ -28,3 +28,8 @@ Sistema experto deductivo (*Forward Chaining*) desarrollado en Python con **Expe
    ```bash
    streamlit run app.py
    ```
+
+Demo Online
+👉 https://planificadordeviajesparajapon-grupoc.streamlit.app/
+
+Aplicación de sistema experto para planificar viajes a Japón utilizando reglas de decisión, personalización de itinerarios y tecnologías Python + Streamli
