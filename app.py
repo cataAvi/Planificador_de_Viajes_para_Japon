@@ -219,9 +219,9 @@ class SistemaViajesJapon(KnowledgeEngine):
     def r01_validar_ciudad(self, c):
         self.declare(ErrorValidacion(motivo=f"La ciudad '{c}' no está permitida."))
 
-    @Rule(Viaje(dias=MATCH.d), TEST(lambda d: not isinstance(d, int) or d <= 0 or d > 25), salience=100)
+    @Rule(Viaje(dias=MATCH.d), TEST(lambda d: not isinstance(d, int) or d <= 0 or d > 15), salience=100)
     def r02_validar_duracion(self, d):
-        self.declare(ErrorValidacion(motivo="La duración debe estar entre 1 y 25 días."))
+        self.declare(ErrorValidacion(motivo="La duración debe estar entre 1 y 15 días."))
 
     @Rule(Viaje(presupuesto=MATCH.p), TEST(lambda p: p <= 0), salience=100)
     def r03_validar_presupuesto(self, p):
@@ -441,7 +441,7 @@ with st.form("travel_form"):
         perfil = st.selectbox("🎭 Perfil de Viaje", ("Cultural", "Recreativa", "Gastronómica", "Natural"))
         
     with col2:
-        dias = st.number_input("🗓️ Cantidad de Días de Estadía", min_value=1, max_value=25, value=7, step=1)
+        dias = st.number_input("🗓️ Cantidad de Días de Estadía", min_value=1, max_value=15, value=7, step=1)
         fecha_inicio = st.date_input("📅 Fecha de Inicio", value=date(2027, 4, 1))
         fecha_fin = st.date_input("📅 Fecha de Fin (Ventana de viaje)", value=date(2027, 4, 20))
         movilidad = st.checkbox("♿ Requiere Accesibilidad (Movilidad Reducida)")
