@@ -170,8 +170,8 @@ def validar_solicitud(ciudad, presupuesto, dias, personas, desde, hasta, movilid
     errores = []
     if ciudad not in CIUDADES_VALIDAS:
         errores.append(f"Ciudad '{ciudad}' no válida. Opciones permitidas: {CIUDADES_VALIDAS}.")
-    if not isinstance(dias, int) or not (1 <= dias <= 25):
-        errores.append("La duración máxima acordada es de 25 días.")
+    if not isinstance(dias, int) or not (1 <= dias <= 15):
+        errores.append("La duración máxima acordada es de 15 días.")
     if not isinstance(presupuesto, (int, float)) or presupuesto <= 0:
         errores.append("El presupuesto debe ser numérico y mayor a 0 USD.")
     if not isinstance(personas, int) or personas < 1:
